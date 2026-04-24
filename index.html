@@ -42,7 +42,7 @@
             margin-bottom: 25px;
         }
 
-        /* Centralização e Estilo da Foto */
+        /* Foto Centralizada */
         .foto-container {
             display: flex;
             justify-content: center;
@@ -53,7 +53,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 15px;
-            border: 3px solid #f1c40f; /* Borda dourada */
+            border: 3px solid #f1c40f;
             box-shadow: 0 0 20px rgba(241, 196, 15, 0.3);
         }
 
@@ -84,9 +84,9 @@
             filter: drop-shadow(0 0 15px #fff);
         }
 
-        /* Feedback e Botão da Música */
+        /* Feedback Final (JAPONÊS) */
         #feedback {
-            color: #f1c40f; /* Mudado para dourado para combinar com a estrela */
+            color: #f1c40f;
             font-weight: bold;
             margin-top: 20px;
             display: none;
@@ -108,14 +108,12 @@
         }
         #music-btn:hover { background-color: #ff6b81; transform: scale(1.05); }
 
-        /* Animações */
         @keyframes shoot {
             0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
             100% { transform: translate(75vw, 75vh) rotate(45deg); opacity: 1; }
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
     </style>
 </head>
 <body>
@@ -134,7 +132,7 @@ Sei que estamos muito distante agora mas como sempre ja falei pra você, não te
         </div>
 
         <div class="foto-container">
-            <img src="foto.jpeg" alt="Nossa lembrança especial">
+            <img src="foto.jpeg" alt="Lembrança especial">
         </div>
 
         <button onclick="começarEstrela()" id="start-btn">最後にお願い事して！🌠</button>
@@ -160,10 +158,8 @@ Sei que estamos muito distante agora mas como sempre ja falei pra você, não te
             star.style.display = 'block';
             star.style.animation = 'shoot 2.5s forwards ease-in';
             
-            // Toca o som
             som.play();
 
-            // Posiciona a estrela para o clique final após a queda
             setTimeout(() => {
                 star.style.animation = 'none';
                 star.style.top = '70%';
@@ -176,9 +172,8 @@ Sei que estamos muito distante agora mas como sempre ja falei pra você, não te
             document.getElementById('feedback').style.display = 'block';
             document.getElementById('music-btn').style.display = 'inline-block';
             document.getElementById('star').style.opacity = '0.4';
-            document.getElementById('star').style.pointerEvents = 'none'; // Evita clicar duas vezes
+            document.getElementById('star').style.pointerEvents = 'none';
             
-            // Som extra de confirmação
             const somClick = document.getElementById('som-brilho').cloneNode(true);
             somClick.volume = 0.5;
             somClick.play();
